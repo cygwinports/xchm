@@ -1,0 +1,32 @@
+WX_VERSION=2.8
+inherit wxwidgets
+
+DESCRIPTION="wxGTK CHM viewer"
+HOMEPAGE="http://xchm.sourceforge.net/"
+SRC_URI="mirror://sourceforge/xchm/${P}.tar.gz
+         mirror://portage/app-text/xchm/files/xchm.desktop
+         mirror://portage/app-text/xchm/files/xchm.xml"
+
+CYGCONF_ARGS="--with-wx-config=${WX_CONFIG}"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	domenu ${S}/xchm.desktop
+
+	insinto /usr/share/mime/packages
+	doins ${S}/xchm.xml
+
+	for i in 16 32 48 128
+	do
+		insinto /usr/share/icons/hicolor/${i}x${i}/apps
+		newins ${S}/art/xchm-${i}.xpm xchm.xpm
+
+		insinto /usr/share/icons/hicolor/${i}x${i}/mimetypes
+		newins ${S}/art/xchmdoc-${i}.xpm application-x-chm.xpm
+	done
+
+	rm -fr ${D}/usr/share/pixmaps/
+}
+
