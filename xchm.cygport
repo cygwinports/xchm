@@ -2,7 +2,7 @@ WX_VERSION=2.8
 inherit wxwidgets
 
 NAME="xchm"
-VERSION=1.21
+VERSION=1.22
 RELEASE=1
 CATEGORY="Text"
 SUMMARY="GUI CHM viewer"
@@ -11,7 +11,7 @@ the content tree if one is available, print pages, change font face and size,
 remember bookmarks, display a searchable index, and search for words in the
 current page and the whole book."
 HOMEPAGE="http://xchm.sourceforge.net/"
-SRC_URI="mirror://sourceforge/xchm/${P}.tar.gz
+SRC_URI="mirror://sourceforge/xchm/xchm-${VERSION}.tar.gz
          mirror://portage/app-text/xchm/files/xchm.desktop"
 
 CYGCONF_ARGS="--with-wx-config=${WX_CONFIG}"
