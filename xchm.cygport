@@ -2,7 +2,7 @@ WX_VERSION=2.8
 inherit wxwidgets
 
 NAME="xchm"
-VERSION=1.22
+VERSION=1.23
 RELEASE=1
 CATEGORY="Text"
 SUMMARY="GUI CHM viewer"
